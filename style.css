@@ -1,3 +1,18 @@
-#formDiv{
+body {
+  text-align: center;
+  background-color: #F7F8F9;
+}
+
+li {
+  list-style-type: none;
+  width: 80%;
+  margin: 10px auto;
+}
+
+#addBtn {
+  
+}
+
+#formDiv {
   display: none;
 }
