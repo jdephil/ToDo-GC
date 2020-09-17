@@ -35,10 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     nameNode = document.createTextNode(nameValue)
     dateNode = document.createTextNode(dateValue)
-    checkDiv = document.createElement('div')
+    checkDiv = document.createElementNS(`<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#9E9E9E" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z"/>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M9 12l2 2l4 -4" />
+  </svg>`, "svg")
     
-    // checkBtn.classList.add('checkBtn');
-    checkDiv.innerHtml = checkSvg
+     taskLi.classList.add('card', "liItems");
+    // checkDiv.innerHtml = checkSvg
     
     console.log(checkDiv)
     
