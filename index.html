@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+
+  <title>ToDo</title>
+</head>
+<body>
+  <header>
+    <h1>ToDo</h1>
+    <p>Let's get some stuff done today!</p>
+  </header>
+  <div id="addTaskDiv">
+    <button id="addBtn" class="btn btn-primary">
+      <img src="assets/plus.svg" alt="plus sign">
+      Add Task
+    </button>
+
+    <div id="formDiv">
+      <form>
+        <input
+          type="text"
+          class="input"
+          id="taskName"
+          placeholder="Add a new task"
+        />
+        <input
+          type="date"
+          class="input"
+          id="taskDate"
+        >
+        </input>
+        <button id="submitBtn" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <main id="mainDiv">
+    <ul id="todoList">
+      <li class="item" id="singleItem">
+
+      </li>
+    </ul>
+
+  </main>
+</body>
+</html>
