@@ -76,9 +76,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     checkDiv.appendChild(checkEl)
+    nameDiv.appendChild(nameNode)
+    dateDiv.appendChild(dateNode)
     taskLi.appendChild(checkDiv)
-    taskLi.appendChild(nameNode)
-    taskLi.appendChild(dateNode)
+    taskLi.appendChild(nameDiv)
+    taskLi.appendChild(dateDiv)
     taskLi.appendChild(deleteEl)
     todoUl.appendChild(taskLi)
 

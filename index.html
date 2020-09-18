@@ -35,9 +35,12 @@
             placeholder="Add a new task"
           />
           <input
-            type="date"
+            type="text"
             class="input"
             id="taskDate"
+            placeholder="Due Date"
+            onfocus="(this.type='date')"
+            onblur="(this.type='text')"
           >
           </input>
           <button class="btn btn-outline-primary btn-sm" id="submitBtn" type="submit">Add</button>

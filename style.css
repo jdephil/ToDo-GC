@@ -17,10 +17,35 @@ li {
 }
 
 .card {
-  flex-direction: row;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
 }
+
+
 .checkDiv {
   color: rgb(158, 158, 158);
+  font-size: 36px;
+}
+
+.nameDiv {
+  align-self: center;
+  font-size: 20px;
+  grid-column: 2/10;
+  justify-self: start;
+}
+
+.dateDiv {
+  align-self: center;
+  grid-column: 11 / 12;
+  width: max-content;
+  justify-self: end;
+  color: grey;
+}
+
+.fa-times {
+  align-self: center;
+  grid-column: 12;
 }
 
 .far {
