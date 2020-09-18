@@ -22,32 +22,18 @@ document.addEventListener('DOMContentLoaded', function() {
     let nameValue = taskName.value
     let dateValue = taskDate.value
 
-    let dateCompare = () => {
-      var inpDate = new Date(dateValue); 
-            var currDate = new Date(); 
-              
-            if(inpDate.setHours(0, 0, 0, 0) ==  
-                    currDate.setHours(0, 0, 0, 0)) 
-            { 
-                dateNode = document.createTextNode("Today") 
-            }  
-            else { 
-              dateNode = document.createTextNode(dateValue) 
-            }          
-    }
+    // creation of new elements
 
-    dateCompare()
+    let taskLi = document.createElement("li")
+    let nameDiv = document.createElement('div')
+    let nameNode = document.createTextNode(nameValue)
+    let dateDiv = document.createElement('div')
+    let dateNode = document.createTextNode(dateValue)
+    let checkDiv = document.createElement('div')
+    let checkEl = document.createElement('i')
+    let deleteEl = document.createElement('i')
 
-    taskLi = document.createElement("li")
-    nameDiv = document.createElement('div')
-    nameNode = document.createTextNode(nameValue)
-    dateDiv = document.createElement('div')
-    dateNode = document.createTextNode(dateValue)
-    checkDiv = document.createElement('div')
-    checkEl = document.createElement('i')
-    deleteEl = document.createElement('i')
-    upDiv = document.createElement('div')
-    upEl = document.createElement('i')
+    // adding in classes for each element for styling and targeting
     
     taskLi.classList.add('card', "liItems");
     nameDiv.classList.add('nameDiv')
@@ -55,48 +41,40 @@ document.addEventListener('DOMContentLoaded', function() {
     checkDiv.classList.add('checkDiv')
     checkEl.classList.add('far', 'fa-check-circle')
     deleteEl.classList.add('fa', 'fa-times')
-    upDiv.classList.add('upDiv')
-    upEl.classList.add('fas', 'fa-long-arrow-alt-up')
-    
 
-    
-    let element = document.querySelectorAll('.checkDiv')
-    
-    Array.from(element).forEach(function(ele, i) {
-        ele.setAttribute("id", 'item' + (i + 1))
-        checkIds.push(ele)
-        
-      })
+    // Event listeners for marking complete and deleting items
 
     checkDiv.addEventListener("click", (e) => {
-      for (var i = 0; i < checkIds.length; i++) {
-        if (checkIds[i].style.color === "rgb(158, 158, 158)" || "") {
-          checkIds[i].style.color = "green"
-        } else {checkIds[i].style.color = "rgb(158, 158, 158)"}
-      }
+      if (checkDiv.style.color === "rgb(158, 158, 158)" || !checkDiv.style.color) {
+        checkDiv.style.color = "green"
+      } else {checkDiv.style.color = "rgb(158, 158, 158)"}
     })
-
 
     deleteEl.addEventListener("click", function(e) {
       this.parentNode.parentNode.removeChild(this.parentNode) 
     });
 
-    upDiv.addEventListener("click", function(e) {
-      this.parentNode.parentNode.removeChild(this.parentNode)
-      let this.parentNode.parentNode.insertBefore(this.parentNode, this.parentNode.previousSibling)
-    })
-    
+    // appending elements in order from divs -> li -> ul
     
     nameDiv.appendChild(nameNode)
     dateDiv.appendChild(dateNode)
     checkDiv.appendChild(checkEl)
-    upDiv.appendChild(upEl)
     taskLi.appendChild(checkDiv)
     taskLi.appendChild(nameDiv)
     taskLi.appendChild(dateDiv)
     taskLi.appendChild(deleteEl)
-    taskLi.appendChild(upDiv)
     todoUl.appendChild(taskLi)
+
+    // Adding ID to new checkmark divs and pushing to new array
+    // after appending so new items get id'd and pushed
+
+    let element = document.querySelectorAll('.checkDiv')
+    
+    Array.from(element).forEach(function(ele, i) {
+        ele.setAttribute("id", 'item' + (i))
+        checkIds.push(ele)
+        
+      })
 
   }
 
