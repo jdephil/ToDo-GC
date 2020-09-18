@@ -34,6 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
     checkDiv.classList.add('checkDiv')
 
     checkDiv.addEventListener('click', completeTask)
+    deleteEl.addEventListener("click",function(e) {
+      this.parentNode.parentNode.removeChild(this.parentNode); 
+    });
     
     checkDiv.appendChild(checkEl)
     taskLi.appendChild(checkDiv)
@@ -47,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.getElementById("submitBtn").addEventListener("click", addTask)
 
-  let checkCircle = document.getElementsByClassName('fa-check-circle')
+  let checkCircle = document.getElementsByClassName("fa-check-circle")
 
 
   let completeTask = () => {
@@ -57,6 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {checkCircle[0].style.color = "rgb(158, 158, 158)"}
   }
   
+
+
   
 
 
