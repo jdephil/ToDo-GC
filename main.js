@@ -52,14 +52,18 @@ document.addEventListener('DOMContentLoaded', function() {
     taskLi.classList.add('card', "liItems");
     nameDiv.classList.add('nameDiv')
     dateDiv.classList.add('dateDiv')
+    checkDiv.classList.add('checkDiv')
     checkEl.classList.add('far', 'fa-check-circle')
     deleteEl.classList.add('fa', 'fa-times')
-    checkDiv.classList.add('checkDiv')
+    upDiv.classList.add('upDiv')
+    upEl.classList.add('fas', 'fa-long-arrow-alt-up')
     
-    let element = document.querySelectorAll('.checkDiv');
+
+    
+    let element = document.querySelectorAll('.checkDiv')
     
     Array.from(element).forEach(function(ele, i) {
-        ele.setAttribute("id", 'item' + (i + 1));
+        ele.setAttribute("id", 'item' + (i + 1))
         checkIds.push(ele)
         
       })
@@ -74,16 +78,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     deleteEl.addEventListener("click", function(e) {
-      this.parentNode.parentNode.removeChild(this.parentNode); 
+      this.parentNode.parentNode.removeChild(this.parentNode) 
     });
+
+    upDiv.addEventListener("click", function(e) {
+      this.parentNode.parentNode.removeChild(this.parentNode)
+      let this.parentNode.parentNode.insertBefore(this.parentNode, this.parentNode.previousSibling)
+    })
     
-    checkDiv.appendChild(checkEl)
+    
     nameDiv.appendChild(nameNode)
     dateDiv.appendChild(dateNode)
+    checkDiv.appendChild(checkEl)
+    upDiv.appendChild(upEl)
     taskLi.appendChild(checkDiv)
     taskLi.appendChild(nameDiv)
     taskLi.appendChild(dateDiv)
     taskLi.appendChild(deleteEl)
+    taskLi.appendChild(upDiv)
     todoUl.appendChild(taskLi)
 
   }
