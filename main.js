@@ -51,31 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   let completeTask = () => {
-    console.log(checkCircle)
-    if (checkDiv.children.style.color === "rgb(158, 158, 158)" || "") {
-      checkDiv.children.style.color = "green"
-    } else {checkDiv.children.style.color = "rgb(158, 158, 158)"}
+    console.log(checkCircle[0].style.color)
+    if (checkCircle[0].style.color === "rgb(158, 158, 158)" || "") {
+      checkCircle[0].style.color = "green"
+    } else {checkCircle[0].style.color = "rgb(158, 158, 158)"}
   }
   
-  // checkCircle.addEventListener('click', completeTask)
-
-  // checkCircleDiv = document.querySelectorAll('.checkDiv')
   
-  // document.addEventListener('click', function(e) {
-  //   if(/checkDiv/.test(e.target.className)) {
-  //     console.log('clicked')
-  //   }
-  // }, false);  
-
-  // .forEach(item => {
-  //   item.addEventListener('click', event => {
-  //     console.log('clicked')
-  //     if (checkCircle.style.color === "rgb(158, 158, 158)" || "") {
-  //       checkCircle.style.color = "green"
-  //     } else {checkCircle.style.color = "rgb(158, 158, 158)"}
-  //   })
-  // })
-
 
 
 
