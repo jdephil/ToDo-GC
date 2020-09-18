@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
     checkDiv = document.createElement('div')
     checkEl = document.createElement('i')
     deleteEl = document.createElement('i')
+    upDiv = document.createElement('div')
+    upEl = document.createElement('i')
     
     taskLi.classList.add('card', "liItems");
     nameDiv.classList.add('nameDiv')
@@ -84,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
     taskLi.appendChild(deleteEl)
     todoUl.appendChild(taskLi)
 
-    
   }
 
   document.getElementById("submitBtn").addEventListener("click", addTask)
