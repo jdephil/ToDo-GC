@@ -13,9 +13,18 @@ li {
   list-style-type: none;
   width: 80%;
   margin: 10px auto;
+  
+}
+
+.card {
+  flex-direction: row;
 }
 .checkDiv {
   color: rgb(158, 158, 158);
+}
+
+.far {
+  display: inline-block;
 }
 
 #mainDiv {

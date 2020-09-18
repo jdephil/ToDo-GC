@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let taskName = document.getElementById('taskName')
   let taskDate = document.getElementById('taskDate')
   let todoUl = document.getElementById("todoList")
+  let checkIds = []
 
   /*---FUNCTIONS---*/
 
@@ -20,21 +21,57 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
     let nameValue = taskName.value
     let dateValue = taskDate.value
-    let taskLi = document.createElement("li")
 
+    let dateCompare = () => {
+      var inpDate = new Date(dateValue); 
+            var currDate = new Date(); 
+              
+            if(inpDate.setHours(0, 0, 0, 0) ==  
+                    currDate.setHours(0, 0, 0, 0)) 
+            { 
+                dateNode = document.createTextNode("Today") 
+            }  
+            else { 
+              dateNode = document.createTextNode(dateValue) 
+            }          
+    }
+
+    dateCompare()
+
+    taskLi = document.createElement("li")
+    nameDiv = document.createElement('div')
     nameNode = document.createTextNode(nameValue)
+    dateDiv = document.createElement('div')
     dateNode = document.createTextNode(dateValue)
     checkDiv = document.createElement('div')
     checkEl = document.createElement('i')
     deleteEl = document.createElement('i')
     
     taskLi.classList.add('card', "liItems");
+    nameDiv.classList.add('nameDiv')
+    dateDiv.classList.add('dateDiv')
     checkEl.classList.add('far', 'fa-check-circle')
     deleteEl.classList.add('fa', 'fa-times')
     checkDiv.classList.add('checkDiv')
+    
+    let element = document.querySelectorAll('.checkDiv');
+    
+    Array.from(element).forEach(function(ele, i) {
+        ele.setAttribute("id", 'item' + (i + 1));
+        checkIds.push(ele)
+        
+      })
 
-    checkDiv.addEventListener('click', completeTask)
-    deleteEl.addEventListener("click",function(e) {
+    checkDiv.addEventListener("click", (e) => {
+      for (var i = 0; i < checkIds.length; i++) {
+        if (checkIds[i].style.color === "rgb(158, 158, 158)" || "") {
+          checkIds[i].style.color = "green"
+        } else {checkIds[i].style.color = "rgb(158, 158, 158)"}
+      }
+    })
+
+
+    deleteEl.addEventListener("click", function(e) {
       this.parentNode.parentNode.removeChild(this.parentNode); 
     });
     
@@ -50,18 +87,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.getElementById("submitBtn").addEventListener("click", addTask)
 
-  let checkCircle = document.getElementsByClassName("fa-check-circle")
-
-
-  let completeTask = () => {
-    console.log(checkCircle[0].style.color)
-    if (checkCircle[0].style.color === "rgb(158, 158, 158)" || "") {
-      checkCircle[0].style.color = "green"
-    } else {checkCircle[0].style.color = "rgb(158, 158, 158)"}
-  }
+ 
   
 
 
+  
+
+  
+
+  
+
+ 
   
 
 
