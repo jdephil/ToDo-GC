@@ -12,39 +12,44 @@
 </head>
 <body>
   <header>
-    <h1>ToDo</h1>
-    <p>Let's get some stuff done today!</p>
+    <h1>TODO</h1>
+    <h6>Let's get some stuff done today!</h6>
   </header>
-  <div id="addTaskDiv">
-    <button id="addBtn" class="btn btn-primary">
-      <img src="assets/plus.svg" alt="plus sign">
-      Add Task
-    </button>
-
-    <div id="formDiv">
-      <form>
-        <input
-          type="text"
-          class="input"
-          id="taskName"
-          placeholder="Add a new task"
-        />
-        <input
-          type="date"
-          class="input"
-          id="taskDate"
-        >
-        </input>
-        <button id="submitBtn" type="submit">Submit</button>
-      </form>
-    </div>
-  </div>
+  
 
   <main id="mainDiv">
-    <ul id="todoList">
-      <li class="liItems card">test</li>
-    </ul>
-    
+    <div id="addTaskDiv">
+      <div id="addBtnDiv">
+        <button id="addBtn" class="btn btn-primary ">
+          <i class="fas fa-plus"></i>
+          Add Task
+        </button>  
+      </div>
+  
+      <div id="formDiv">
+        <form>
+          <input
+            type="text"
+            class="input"
+            id="taskName"
+            placeholder="Add a new task"
+          />
+          <input
+            type="date"
+            class="input"
+            id="taskDate"
+          >
+          </input>
+          <button class="btn btn-outline-primary btn-sm" id="submitBtn" type="submit">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="todoDiv">
+      <ul id="todoList">
+      
+      </ul>
+    </div>
   </main>
 </body>
 </html>

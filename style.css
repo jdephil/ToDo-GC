@@ -1,6 +1,12 @@
 body {
   text-align: center;
   background-color: #F7F8F9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px 0;
+}
+
+h6 {
+  color: darkgray;
 }
 
 li {
@@ -12,14 +18,33 @@ li {
   color: rgb(158, 158, 158);
 }
 
-.green {
-  color: green;
+#mainDiv {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+}
+
+#addBtnDiv {
+  
+  grid-column: 3;
+  
+}
+
+#addTaskDiv {
+  grid-column: 2 / 6;
 }
 
 #addBtn {
-  
+  margin: 10px 0;
 }
 
 #formDiv {
   display: none;
+  grid-column: 3 / 6;
+  grid-row: 2;
+}
+
+#todoDiv {
+  grid-row: 2;
+  grid-column: 2 / 12;
 }
